@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { Recipe } from './recipe.model';
 
 @Injectable({
@@ -17,6 +17,8 @@ export class RecipeService {
       'https://www.vegrecipesofindia.com/wp-content/uploads/2021/09/malpua-1-1024x1536.jpg'
     ),
   ];
+
+  recipeSelected = new EventEmitter<Recipe>();
 
   getRecipes() {
     return this.recipe.slice();
